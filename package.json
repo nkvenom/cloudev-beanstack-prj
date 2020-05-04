@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf www/ || true",
-    "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
+    "clean": "rimraf  www",
+    "copyfiles": "copyfiles package.json www/",
+    "compile": "tsc",
+    "compress": "zip -r www/Archive.zip www",
+    "build": "run-s clean compile copyfiles compress",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
   },
   "repository": {
@@ -23,12 +26,15 @@
     "@types/bluebird": "^3.5.27",
     "@types/express": "^4.16.1",
     "@types/node": "^11.13.11",
+    "copyfiles": "^2.2.0",
+    "npm-run-all": "^4.1.5",
     "ts-node-dev": "^1.0.0-pre.39",
     "tslint": "^5.16.0",
     "typescript": "^3.4.5"
   },
   "dependencies": {
     "express": "^4.17.0",
-    "jimp": "^0.6.4"
+    "jimp": "^0.6.4",
+    "rimraf": "^3.0.2"
   }
 }
