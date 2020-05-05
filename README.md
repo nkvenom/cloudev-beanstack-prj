@@ -1,10 +1,16 @@
 # Udagram Image Filtering Microservice
 
+### Github URL
+https://github.com/nkvenom/cloudev-beanstack-prj
+
 ### Service endpoint root
 http://cloudevudagram-env.eba-7mqhfmev.us-east-1.elasticbeanstalk.com
 
 ### Example Usage
 http://cloudevudagram-env.eba-7mqhfmev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://pics.me.me/rm-rf-node-modules-npm-install-rm-rf-node-modules-46673859.png
+
+### Screenshot
+The screenshots are in the deployment_screenshots folder
 
 ### Setup Node Environment
 
