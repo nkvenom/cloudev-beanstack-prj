@@ -8,7 +8,7 @@
     "clean": "rimraf  www",
     "copyfiles": "copyfiles package.json www/",
     "compile": "tsc",
-    "compress": "zip -r www/Archive.zip www",
+    "compress": "cd www && zip -r Archive.zip .",
     "build": "run-s clean compile copyfiles compress",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
   },
